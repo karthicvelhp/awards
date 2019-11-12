@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NominationService } from '../nomination.service';
 
 @Component({
   selector: 'app-somebody',
@@ -27,13 +28,13 @@ export class SomebodyComponent implements OnInit {
     textArea: new FormControl('', [Validators.required,]),
   });
 
-  constructor() { }
+  constructor(private nomination: NominationService) { }
 
   ngOnInit() {
   }
 
   private onSubmit() {
-    console.log(this.myForm.value);
+    this.nomination.createCustomer(this.myForm);
   }
 
 }
