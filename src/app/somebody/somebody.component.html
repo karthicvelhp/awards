@@ -1,7 +1,7 @@
 <mat-card>
     <h4>Your Information</h4>
     <div class="example-container">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="nomineeSomebody" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Relationship to the nominee</mat-label>
-                        <input matInput formControlName="nominee">
+                        <input matInput formControlName="relationship">
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
@@ -55,13 +55,13 @@
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>First Name</mat-label>
-                        <input matInput formControlName="nomineeFirstName">
+                        <input matInput formControlName="nomineefName">
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Last Name</mat-label>
-                        <input matInput formControlName="nomineeLastName">
+                        <input matInput formControlName="nomineelName">
                     </mat-form-field>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Company Name</mat-label>
-                        <input matInput formControlName="companyName">
+                        <input matInput formControlName="nomineeCompanyName">
                     </mat-form-field>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <mat-form-field appearance="outline">
                         <mat-icon matSuffix>phone_enabled</mat-icon>
                         <mat-label>Phone</mat-label>
-                        <input matInput formControlName="nomineePhone">
+                        <input matInput formControlName="phoneNumber">
                     </mat-form-field>
                 </div>
             </div>
@@ -101,13 +101,13 @@
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Website</mat-label>
-                        <input matInput formControlName="nomineeWebsite">
+                        <input matInput formControlName="website">
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Facebook</mat-label>
-                        <input matInput formControlName="nomineeFacebook">
+                        <input matInput formControlName="facebook">
                     </mat-form-field>
                 </div>
             </div>
@@ -116,13 +116,13 @@
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>LinkedIn URL</mat-label>
-                        <input matInput formControlName="nomineeLinked">
+                        <input matInput formControlName="linkedIn">
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Birth Date</mat-label>
-                        <input matInput [matDatepicker]="picker" formControlName="datePicker">
+                        <input matInput [matDatepicker]="picker" formControlName="dob">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
@@ -130,7 +130,7 @@
             </div>
             <mat-form-field appearance="outline">
                 <mat-label></mat-label>
-                <textarea matInput formControlName="textArea"></textarea>
+                <textarea matInput formControlName="reasonForNominee"></textarea>
                 <mat-hint>In 200 words or less, tell the judges why should your nominee be selected for this prestigious
                     award:</mat-hint>
             </mat-form-field>

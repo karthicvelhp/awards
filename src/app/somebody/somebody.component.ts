@@ -9,23 +9,24 @@ import { NominationService } from '../nomination.service';
 })
 export class SomebodyComponent implements OnInit {
 
-  myForm = new FormGroup({
+  nomineeSomebody = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required,]),
     jobTitle: new FormControl('', [Validators.required,]),
-    nominee: new FormControl('', [Validators.required,]),
-    email: new FormControl('', [Validators.required,]),
-    nomineeFirstName: new FormControl('', [Validators.required,]),
-    nomineeLastName: new FormControl('', [Validators.required,]),
-    nomineeJobTitle: new FormControl('', [Validators.required,]),
     companyName: new FormControl('', [Validators.required,]),
+    relationship: new FormControl('', [Validators.required,]),
+    email: new FormControl('', [Validators.required,]),
+    nomineefName: new FormControl('', [Validators.required,]),
+    nomineelName: new FormControl('', [Validators.required,]),
+    nomineeJobTitle: new FormControl('', [Validators.required,]),
+    nomineeCompanyName: new FormControl('', [Validators.required,]),
     nomineeEmail: new FormControl('', [Validators.required,]),
-    nomineePhone: new FormControl('', [Validators.required,]),
-    nomineeWebsite: new FormControl('', [Validators.required,]),
-    nomineeFacebook: new FormControl('', [Validators.required,]),
-    nomineeLinked: new FormControl('', [Validators.required,]),
-    datePicker: new FormControl('', [Validators.required,]),
-    textArea: new FormControl('', [Validators.required,]),
+    phoneNumber: new FormControl('', [Validators.required,]),
+    website: new FormControl('', [Validators.required,]),
+    facebook: new FormControl('', [Validators.required,]),
+    linkedIn: new FormControl('', [Validators.required,]),
+    dob: new FormControl('', [Validators.required,]),
+    reasonForNominee: new FormControl('', [Validators.required,]),
   });
 
   constructor(private nomination: NominationService) { }
@@ -34,7 +35,14 @@ export class SomebodyComponent implements OnInit {
   }
 
   private onSubmit() {
-    this.nomination.createCustomer(this.myForm);
+    this.nomination.createCustomer(this.nomineeSomebody).subscribe(
+      (res) => {
+        console.log("success")
+      },
+      (err) => {
+        console.log(err)
+      },
+    );
   }
 
 }
